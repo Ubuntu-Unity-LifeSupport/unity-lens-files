@@ -43,6 +43,11 @@ namespace Unity.FilesLens.Locate
   {
     if (blacklist_tracker == null) blacklist_tracker = new BlacklistTracker ();
     var result = new GLib.SList<FileInfo> ();
+
+    // locate is optional (plocate is only recommended): without it, only the
+    // Zeitgeist results are shown, instead of a warning on every search
+    if (Environment.find_program_in_path ("locate") == null)
+      return result;
     var query = Regex.escape_string (input_query.strip ());
 
     // FIXME: we could limit the search to specific directories, but using regex

@@ -25,6 +25,7 @@ Package: unity-lens-files
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
+Recommends: plocate,
 Breaks: unity (<< 6.0.0),
 Description: File lens for unity
  This package contains the "file" lens which can be used

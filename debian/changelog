@@ -1,3 +1,13 @@
+unity-lens-files (7.1.0+17.10.20170605-0ubuntu6+unity1) resolute; urgency=medium
+
+  * debian/control: recommend plocate. The lens runs locate for its global
+    search (use-locate, on by default), but on 26.04 neither ubuntu-standard
+    nor ubuntu-unity-desktop installs a locate.
+  * src/locate.vala: without a locate in PATH, return no locate results
+    instead of logging a spawn error on every search.
+
+ -- Ubuntu Unity Life Support <mihail.rozshko@gmail.com>  Sat, 26 Sep 2026 14:03:15 +0000
+
 unity-lens-files (7.1.0+17.10.20170605-0ubuntu6) resolute; urgency=medium
 
   * No-change mass rebuild for Ubuntu 26.04 (LP: #2132257)
